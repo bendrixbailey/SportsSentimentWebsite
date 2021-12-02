@@ -126,9 +126,9 @@ function postUserInput(team1name, city1, team2name, city2, sport, date){
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200){
-            console.log(http.responseText);
+            console.log("request success");
         }else{
-            console.log(http.responseText);
+            console.log("request failure");
         }
     }
     http.send(null);
