@@ -9,30 +9,6 @@ Two cards at the bottom that show the general sentiment, and the confidence
 of the sentiment.
 
 
-# Request data
-The format of the incoming data for comprehend results MUST be in the following format
-```json
-    {
-        "t1Confidence" : "String",
-        "t2Confidence" : "String",
-        "t1Result" : "String",
-        "t2Result" : "String",
-        "totalTweets" : "Int",
-    }
-```
-
-The format of outgoing data to the api with user input is as follows:
-```json
-{
-    "team1Name" : "",
-    "team1City" : "",
-    "team2Name" : "",
-    "team2City" : "",
-    "date" : "",
-    "gameType" : ""
-}
-```
-
 # Parent Project
 The main project this is part of is linked here https://github.com/RIT-cloud-computing/term-project-team-team-3
 

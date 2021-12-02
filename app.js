@@ -1,7 +1,7 @@
 var g_team1Name = "";
 var g_team2Name = "";
 
-var apiURL = "https://eqlbpvckkh.execute-api.us-east-1.amazonaws.com/test?";
+var apiURL = "";
 //AWS.config.access
 
 
@@ -119,9 +119,10 @@ function postUserInput(team1name, city1, team2name, city2, sport, date){
     //     "gameDate" : date
     // }
 
-    http.open("GET", apiURL + params, true);
+    http.open("GET", apiURL + "" + params, true);
     //http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    console.log(apiURL + params);
+    //console.log(apiURL + params);
+    http.setRequestHeader('Access-Control-Allow-Origin', '*');
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200){
@@ -131,6 +132,7 @@ function postUserInput(team1name, city1, team2name, city2, sport, date){
         }
     }
     http.send(null);
+    console.log("get request sent ")
     //call the get function 5 seconds after get function is sent
     //setTimeout(() => {getFinalResults();}, 5000);
 }
