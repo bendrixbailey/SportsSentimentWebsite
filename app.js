@@ -127,11 +127,11 @@ function postUserInput(team1name, city1, team2name, city2, sport, date){
     //console.log(apiURL + params);
     // http.setRequestHeader('Access-Control-Allow-Origin', '*');
 
-    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    http.onreadystatechange = (e) => {
-        console.log(http.responseText);
-        console.log("request sent");
-    }
+    //http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    // http.onreadystatechange = (e) => {
+    //     console.log(http.responseText);
+    //     console.log("request sent");
+    // }
     http.send(null);
     //call the get function 5 seconds after get function is sent
     //setTimeout(() => {getFinalResults();}, 5000);
