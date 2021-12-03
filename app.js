@@ -126,7 +126,6 @@ function postUserInput(team1name, city1, team2name, city2, sport, date){
     //http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     //console.log(apiURL + params);
     http.setRequestHeader('Access-Control-Allow-Origin', '*');
-    http.setRequestHeader('Access-Control-Allow-Origin', 'accept');
 
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     http.onreadystatechange = (e) => {
