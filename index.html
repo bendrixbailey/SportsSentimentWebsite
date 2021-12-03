@@ -22,7 +22,7 @@
             tweets related to the specified game. It will then report which team had the most
             positive sentiment towards it, along with its confidence in the prediction.
         </p>
-        <form onsubmit="confirmParameters()">
+        <div>
             <div class="inputline">
                 <label class=labelCell>Team 1 Name (Dont include city)</label>
                 <input type="text" id="team1name" name="team1name" placeholder="Team 1">
@@ -54,9 +54,9 @@
                 </select>
             </div>
             <div class="inputline">
-                <input type="submit" value = "Submit">
+                <button class="button" onclick="confirmParameters()">Submit</button>
             </div>
-        </form>
+        </div>
     </div>
     <div class="textbody">
         <button class="button" onclick="getFinalResults()">Get Results</button>

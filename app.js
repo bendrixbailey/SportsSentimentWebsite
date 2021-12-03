@@ -4,6 +4,8 @@ var g_team2Name = "";
 var apiURL = "";
 //AWS.config.access
 
+var response = "";
+
 
 /**
  * This function is used to submit the api url to update it when building it through cloudformation
@@ -23,12 +25,12 @@ function updateAPIUrl(){
  * team/game information.
  */
 function confirmParameters(){
-    t1n = document.forms[0].team1name.value;
-    city1 = city1 = document.forms[0].city1.value;
-    t2n = document.forms[0].team2name.value;
-    city2 = document.forms[0].city2.value;
-    date = document.forms[0].date.value;
-    sport = document.forms[0].sport.value;
+    t1n = document.getElementById("team1name").value;
+    city1 = city1 = document.getElementById("city1").value;
+    t2n = document.getElementById("team2name").value;
+    city2 = document.getElementById("city2").value;
+    date = document.getElementById("date").value;
+    sport = document.getElementById("sport").value;
     //console.log(t1n + " " + city1 + " " + t2n + " " + city2 + " " + date + " " + sport)
     if(dateValidation(date) && inputVal(t1n) && inputVal(t2n) && inputVal(city1) && inputVal(city2)){
         g_team1Name = t1n;
@@ -119,20 +121,17 @@ function postUserInput(team1name, city1, team2name, city2, sport, date){
     //     "gameDate" : date
     // }
 
-    http.open("GET", apiURL + "" + params, true);
+    http.open("GET", apiURL + params, true);
+    console.log(apiURL + params);
     //http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     //console.log(apiURL + params);
-    http.setRequestHeader('Access-Control-Allow-Origin', '*');
+    //http.setRequestHeader('Access-Control-Allow-Origin', '*');
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    http.onreadystatechange = function() {
-        if(http.readyState == 4 && http.status == 200){
-            console.log("request success");
-        }else{
-            console.log("request failure");
-        }
+    http.onreadystatechange = (e) => {
+        console.log(http.responseText);
+        console.log("request sent");
     }
     http.send(null);
-    console.log("get request sent ")
     //call the get function 5 seconds after get function is sent
     //setTimeout(() => {getFinalResults();}, 5000);
 }
